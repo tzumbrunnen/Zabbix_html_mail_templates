@@ -1,0 +1,1 @@
+# Zabbix_html_mail_templates
