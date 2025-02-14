@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{HOST.NAME} PROBLEM</title>
+    <style>
+        /* Base styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        .container {
+            max-width: 700px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        h1 {
+            color: #fff;
+            padding: 15px;
+            margin: 0;
+            border-radius: 6px 6px 0 0; /* Subtle rounding */
+        }
+        .problem {
+            background-color: #e74c3c; /* Brighter red */
+            border-radius: 6px 6px 0 0;
+        }
+        .resolved {
+            background-color: #27ae60; /* Brighter green */
+            border-radius: 6px 6px 0 0;
+        }
+        .info {
+            background-color: #3498db; /* Brighter blue */
+            border-radius: 6px 6px 0 0;
+        }
+        .section-title {
+            background-color: #f0f0f0;
+            padding: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .footer {
+            font-size: 12px;
+            color: #777;
+            margin-top: 20px;
+        }
+
+        /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #2e2e2e; /* Brighter dark background */
+                color: #e0e0e0;
+            }
+            .container {
+                background-color: #3a3a3a; /* Lighter than default dark mode */
+                color: #e0e0e0;
+                box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.1);
+            }
+            .section-title {
+                background-color: #4a4a4a;
+            }
+            table {
+                color: #e0e0e0;
+            }
+            tr:nth-child(even) {
+                background-color: #4a4a4a;
+            }
+            th, td {
+                border-bottom: 1px solid #5a5a5a;
+            }
+            a {
+                color: #66b2ff;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="problem">
+        <h1>⚠️ ALERT</h1>
+    </div>
+
+    <div class="section-title">Host Information</div>
+    <table>
+        <tr><td>🏢 Name:</td> <td>{HOST.NAME}</td></tr>
+        <tr><td>💻 IP:</td> <td>{HOST.CONN}</td></tr>
+        <tr><td>📝 Description:</td> <td>{HOST.DESCRIPTION}</td></tr>
+        <tr><td>🌐 Proxy:</td> <td>{PROXY.NAME}</td></tr>
+    </table>
+
+    <div class="section-title">Event Details</div>
+    <table>
+        <tr><td>🚨 Event:</td> <td><a href="{$ZABBIX.URL}/tr_events.php?triggerid={TRIGGER.ID}&eventid={EVENT.ID}">{EVENT.NAME}</a></td></tr>
+        <tr><td>⚠️ Severity:</td> <td>{EVENT.SEVERITY}</td></tr>
+        <tr><td>🔎 Operational data:</td> <td>{EVENT.OPDATA}</td></tr>
+        <tr><td>⏳ Start:</td> <td>{EVENT.TIME} on {EVENT.DATE}</td></tr>
+        <tr><td>📊 Value:</td> <td>{ITEM.VALUE}</td></tr>
+        <tr><td>🆔 Original problem ID:</td> <td>{EVENT.ID}</td></tr>
+        <tr><td>ℹ️ Current problem status:</td> <td>{EVENT.STATUS}</td></tr>
+        
+    </table>
+
+    <div class="footer">⏰ DMD2 Monitoring - {TIME}.fmttime(%Y-%m-%d %H:%M:%S)</div>
+</div>
+
+</body>
+</html>

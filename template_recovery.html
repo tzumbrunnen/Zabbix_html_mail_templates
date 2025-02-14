@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DMD2 Monitoring Alert</title>
+    <style>
+        /* Base styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 700px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        h1 {
+            color: #fff;
+            padding: 15px;
+            margin: 0;
+            border-radius: 8px 8px 0 0;
+        }
+        .problem {
+            background-color: #d9534f; /* Red */
+            border-radius: 8px;
+        }
+        .resolved {
+            background-color: #5cb85c; /* Green */
+            border-radius: 8px;
+        }
+        .info {
+            background-color: #5bc0de; /* Blue */
+            border-radius: 8px;
+        }
+        .section-title {
+            background-color: #e9ecef;
+            padding: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .footer {
+            font-size: 12px;
+            color: #777;
+            margin-top: 20px;
+        }
+
+        /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #222;
+                color: #ddd;
+            }
+            .container {
+                background-color: #333;
+                color: #ddd;
+            }
+            .section-title {
+                background-color: #444;
+            }
+            table {
+                color: #ddd;
+            }
+            tr:nth-child(even) {
+                background-color: #444;
+            }
+            th, td {
+                border-bottom: 1px solid #555;
+            }
+            a {
+                color: #4da6ff;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="resolved">
+        <h1>✅ RESOLVED</h1>
+    </div>
+
+    <div class="section-title">Host Information</div>
+    <table>
+        <tr><td>🏢 Name:</td> <td>{HOST.NAME}</td></tr>
+        <tr><td>💻 IP:</td> <td>{HOST.CONN}</td></tr>
+        <tr><td>📝 Description:</td> <td>{HOST.DESCRIPTION}</td></tr>
+        <tr><td>🌐 Proxy:</td> <td>{PROXY.NAME}</td></tr>
+    </table>
+
+    <div class="section-title">Event Details</div>
+    <table>
+        <tr><td>🚨 Event:</td> <td><a href="{$ZABBIX.URL}/tr_events.php?triggerid={TRIGGER.ID}&eventid={EVENT.ID}">{EVENT.NAME}</a></td></tr>
+        <tr><td>⚠️ Severity:</td> <td>{TRIGGER.SEVERITY}</td></tr>
+        <tr><td>🔎 Operational data:</td> <td>{EVENT.OPDATA}</td></tr>
+        <tr><td>⏳ Problem has been resolved:</td> <td>{EVENT.RECOVERY.TIME} on {EVENT.RECOVERY.DATE}</td></tr>
+        <tr><td>🕒 Problem duration:</td> <td>{EVENT.DURATION}</td></tr>
+        <tr><td>📊 Value:</td> <td>{ITEM.VALUE}</td></tr>
+        <tr><td>🆔 Original problem ID:</td> <td>{EVENT.ID}</td></tr>
+        <tr><td>ℹ️ Current problem status:</td> <td>{EVENT.STATUS}</td></tr>
+    </table>
+
+    <div class="footer">⏰ DMD2 Monitoring Alert - {TIME}.fmttime(%Y-%m-%d %H:%M:%S)</div>
+</div>
+
+</body>
+</html>
