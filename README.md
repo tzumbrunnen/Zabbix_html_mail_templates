@@ -16,7 +16,7 @@ To use this template in **Zabbix email notifications**, follow these steps:
 1. **Go to Zabbix UI** → **Administration** → **Media Types**.
 2. Select **Email** and edit the **Message Templates**.
 3. Click **Add Template** and choose **HTML** as the content type.
-4. Copy and paste the HTML code from `zabbix_email_template.html`.
+4. Copy and paste the HTML code from the html files accordingly.
 5. Save the template and test an email notification.
 
 ## 🎨 Customization
@@ -65,9 +65,13 @@ The template **automatically adapts to dark mode**:
 - Uses **CSS `prefers-color-scheme: dark`** media queries.
 
 ## 🔧 Example Output
-| Light Mode | Dark Mode |
+| Mobile Alert Light Mode | Mobile resolved Light Mode |
 |------------|------------|
-| ![Light Mode Preview](https://via.placeholder.com/600x300/FFFFFF/333333?text=Light+Mode) | ![Dark Mode Preview](https://via.placeholder.com/600x300/2e2e2e/e0e0e0?text=Dark+Mode) |
+| ![Alert Preview](images/mobile_alert__lightmode.png) | ![Resolved Preview](images/mobile_resolved__lightmode.png) |
+
+| Desktop Alert Dark Mode | Desktop resolved Dark Mode |
+|------------|------------|
+| ![Alert Preview](images/desktop_alert_darkmode.jpeg) | ![Resolved Preview](images/desktop_resolved_darkmode.jpeg) |
 
 ## 📬 Testing
 To test the template:
