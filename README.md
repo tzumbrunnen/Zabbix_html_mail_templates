@@ -58,10 +58,6 @@ The template uses **CSS for styling** and **Zabbix macros** to insert dynamic da
 | 🆔 | `{EVENT.ID}` | Original event problem ID. |
 | ℹ️ | `{EVENT.STATUS}` | Displays the current problem status. |
 
-### 🔹 **Footer Section**
-- Displays the monitoring timestamp:  
-  ⏰ `"DMD2 Monitoring - {TIME}.fmttime(%Y-%m-%d %H:%M:%S)"`  
-
 ## 🖥️ Dark Mode Support
 The template **automatically adapts to dark mode**:
 - Backgrounds lighten up for better readability (`#2e2e2e → #3a3a3a`).
