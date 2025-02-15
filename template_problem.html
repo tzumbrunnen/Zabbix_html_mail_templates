@@ -10,7 +10,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f5f5f5;
+            background-color: #f4f4f4;
             color: #333;
         }
         .container {
@@ -26,22 +26,22 @@
             color: #fff;
             padding: 15px;
             margin: 0;
-            border-radius: 6px 6px 0 0; /* Subtle rounding */
+            border-radius: 8px 8px 0 0;
         }
         .problem {
-            background-color: #e74c3c; /* Brighter red */
-            border-radius: 6px 6px 0 0;
+            background-color: #d9534f; /* Red */
+            border-radius: 8px;
         }
         .resolved {
-            background-color: #27ae60; /* Brighter green */
-            border-radius: 6px 6px 0 0;
+            background-color: #5cb85c; /* Green */
+            border-radius: 8px;
         }
         .info {
-            background-color: #3498db; /* Brighter blue */
-            border-radius: 6px 6px 0 0;
+            background-color: #5bc0de; /* Blue */
+            border-radius: 8px;
         }
         .section-title {
-            background-color: #f0f0f0;
+            background-color: #e9ecef;
             padding: 10px;
             font-size: 16px;
             font-weight: bold;
@@ -78,28 +78,27 @@
         /* Dark Mode Support */
         @media (prefers-color-scheme: dark) {
             body {
-                background-color: #2e2e2e; /* Brighter dark background */
-                color: #e0e0e0;
+                background-color: #222;
+                color: #ddd;
             }
             .container {
-                background-color: #3a3a3a; /* Lighter than default dark mode */
-                color: #e0e0e0;
-                box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.1);
+                background-color: #333;
+                color: #ddd;
             }
             .section-title {
-                background-color: #4a4a4a;
+                background-color: #444;
             }
             table {
-                color: #e0e0e0;
+                color: #ddd;
             }
             tr:nth-child(even) {
-                background-color: #4a4a4a;
+                background-color: #444;
             }
             th, td {
-                border-bottom: 1px solid #5a5a5a;
+                border-bottom: 1px solid #555;
             }
             a {
-                color: #66b2ff;
+                color: #4da6ff;
             }
         }
     </style>
